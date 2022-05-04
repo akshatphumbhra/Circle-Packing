@@ -17,13 +17,16 @@ im = pic.load()
 
 circles = set()
 
-possibleCoords = set()
+pcList = []
 Xlist = [i for i in range(Variables.width)]
 Ylist = [j for j in range(Variables.height)]
 
 for x in Xlist:
     for y in Ylist:
-        possibleCoords.add((x, y))
+        pcList.append((x, y))
+
+random.shuffle(pcList)
+possibleCoords = set(pcList)
 
 numCircles = Variables.numCircles
 screen.fill((0,0,0))

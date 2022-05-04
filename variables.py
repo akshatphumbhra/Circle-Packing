@@ -5,7 +5,7 @@ class Variables:
     # Line width, setting this to 0 fills the circle
     lw = 0
     image = "imgs/monalisa.jpg"
-    output = "monalisa.eps"
+    output = "monalisa1.eps"
     numCircles = 85000
-    resolution = 200
-    fill = False
+    resolution = 1
+    fill = True
