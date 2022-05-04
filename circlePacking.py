@@ -37,9 +37,11 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
             if event.type == pygame.MOUSEBUTTONUP:
-                print(len(circles))
+                convertToPostScript()
+                running = False 
 
-        if len(circles) < numCircles:
+
+        if len(circles) < numCircles and running:
             addCircles()
             for circ in circles:
                 if circ.growing:
@@ -91,10 +93,15 @@ def convertToPostScript():
     file.setLine(lineJoin=1, lineCap=1)
     for circ in circles:
         color = circ.getColor()
-        center = circ.getCoords()
+        center = adjustCoords(circ.getCoords())
         radius = circ.getRadius()
         file.setRGB(color)
         file.makeCircle(center, radius, fill=True)
+    file.createFile()
+
+def adjustCoords(coords):
+    newCoords = (coords[0], Variables.height - coords[1])
+    return newCoords
 
 main()
 # addCircles()
