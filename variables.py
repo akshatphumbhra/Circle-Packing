@@ -7,4 +7,5 @@ class Variables:
     image = "imgs/monalisa.jpg"
     output = "monalisa.eps"
     numCircles = 85000
-    resolution = 1
+    resolution = 200
+    fill = False

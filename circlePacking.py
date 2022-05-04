@@ -96,7 +96,7 @@ def convertToPostScript():
         center = adjustCoords(circ.getCoords())
         radius = circ.getRadius()
         file.setRGB(color)
-        file.makeCircle(center, radius, fill=True)
+        file.makeCircle(center, radius, fill=Variables.fill)
     file.createFile()
 
 def adjustCoords(coords):
