@@ -94,6 +94,8 @@ def dist(p1, p2):
 def convertToPostScript():
     file = PostScript(Variables.output, Variables.width, Variables.height)
     file.setLine(lineJoin=1, lineCap=1)
+    if not Variables.fill:
+        file.setLineWidth(0.1)
     file.setGray(0)
     points = [(0, 0), (Variables.width, 0), (Variables.width, Variables.height), (0, Variables.height)]
     file.definePath(points, fill=True, close=True)
